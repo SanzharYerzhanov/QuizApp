@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp5.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp5">
+    <TabBar>
+        <Tab Title="Main" Icon="home.png">
+            <ShellContent Title="Choose a test" ContentTemplate="{DataTemplate local:QuizzesPage}" />
+        </Tab>
+        <Tab Title="Settings" Icon="settings.png" Route="settings">
+            <ContentPage Title="Settings">
+            </ContentPage>
+        </Tab>
+        <Tab Title="Past Tests" Icon="past_tests.png" Route="past_tests">
+            <ShellContent Title="Your Results">
+                <local:PastTestsPage />
+            </ShellContent>
+        </Tab>
+    </TabBar>
+</Shell>
+   

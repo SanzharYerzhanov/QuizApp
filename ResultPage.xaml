@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.ResultPage"
+             Title="{Binding Theme}">
+    <Grid BackgroundColor="#f1f1f1" RowSpacing="10" ColumnSpacing="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <StackLayout Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" BackgroundColor="White">
+            <Label Text="{Binding Score}" TextColor="#512BD4" FontSize="45" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Correct Answers" HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="White">
+            <Label Text="{Binding Accuracy}" TextColor="#512BD4" FontSize="45" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Your accuracy" HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Grid.Column="0" BackgroundColor="White">
+            <Label Text="{Binding Timer}" TextColor="#512BD4" FontSize="45" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+            <Label Text="Time" HorizontalOptions="Center"/>
+        </StackLayout>
+        <StackLayout Grid.Row="2" Grid.Column="1" BackgroundColor="White">
+            <Button x:Name="button" Text="Next Level" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Clicked="NextClicked"/>
+            <Label x:Name="label" Text="You can't go to the next level" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.QuizzesPage">
+    <StackLayout Padding="15" BackgroundColor="#f1f1f1">
+        <CollectionView x:Name="list" ItemsSource="{Binding Quizzes}" ItemsLayout="VerticalGrid, 2">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame>
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="QuizSelected" />
+                        </Frame.GestureRecognizers>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Text="{Binding Theme}" />
+                            <Label Grid.Row="1" HorizontalOptions="Start" Text="{Binding TotalQuestions, StringFormat='{0} Qs.'}" />
+                            <Label Grid.Row="1" HorizontalOptions="End" Text="{Binding Complexity, StringFormat='Level: {0}'}" />
+                            <Image Grid.Row="1" HorizontalOptions="Center">
+                                <Image.Triggers>
+                                    <DataTrigger Binding="{Binding IsClosed}" TargetType="Image" Value="True">
+                                        <Setter Property="Source" Value="closed.png" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
